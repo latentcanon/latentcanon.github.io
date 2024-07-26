@@ -16,7 +16,7 @@ profiles:
       <p>Project Lead</p>
       <p>Senior Researcher</p>
   - align: left
-    image: team/maria-teresa.JPG
+    image: team/mt.png
     content: about_maria-teresa.md
     image_circular: false
     more_info: >

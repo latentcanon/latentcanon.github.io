@@ -23,6 +23,7 @@ The program aims to prepare doctoral students from all disciplines for an enviro
 ### Program Benefits
 
 Participants in the Excellence Program will:
+
 - Engage with research methods from various disciplines.
 - Learn to critically reflect on the impacts of digitalization.
 - Join an exclusive peer network.
@@ -31,5 +32,3 @@ Participants in the Excellence Program will:
 ### Scholarships in the Excellence Program
 
 The DSI offers scholarships to outstanding doctoral students. Applications for these scholarships are accepted annually in line with SNF guidelines.
-
-

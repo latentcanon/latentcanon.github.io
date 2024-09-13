@@ -1,16 +1,17 @@
 ---
 layout: default
 ---
-
 <div class="post">
-<style>
-    html, body {
+  <style>
+    html,
+    body {
       margin-bottom: 10vw !important;
     }
-    @media(max-width: 576px) {
-        html, body {
-            margin-bottom: 50vw !important;
-        }
+    @media (max-width: 576px) {
+      html,
+      body {
+        margin-bottom: 50vw !important;
+      }
     }
   </style>
   <header class="post-header">
@@ -24,7 +25,7 @@ layout: default
     </h1>
     <p class="desc">{{ page.subtitle }}</p>
   </header>
-  
+
   <article>
     {% if page.profile %}
       <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">

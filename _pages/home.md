@@ -6,7 +6,7 @@ page_title: "The Canon of Latent Spaces: How Large AI Models Encode Art and Cult
 page_subtitle: >
   ABOUT
 
-news: true  # includes a list of news items
+news: true # includes a list of news items
 ---
 
 ##### _About_

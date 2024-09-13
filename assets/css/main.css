@@ -66,6 +66,26 @@
   margin-top: 3em;
 }
 
+
+.iframe-container {
+  max-width: 100%;  /* Ensures the iframe doesn’t overflow the container */
+  width: 80%;       /* Adjusts the iframe to 80% of the available space */
+  margin: 0 auto;   /* Centers the iframe on the page */
+}
+
+iframe {
+  width: 100%;      /* Ensures the iframe occupies the full width of its container */
+  height: 500px;    /* You can adjust the height as needed */
+  border: none;     /* Removes any default borders */
+}
+
+/* Optional: Make it fully responsive for smaller screens */
+@media (max-width: 768px) {
+  .iframe-container {
+      width: 100%;  /* Full width on smaller screens */
+  }
+}
+
 html[data-theme="dark"] {
   --global-bg-color: #1c1c1d;
   --global-code-bg-color: #2c3237;

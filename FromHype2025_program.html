@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>From Hype to Reality: AI in the Study of Art and Culture</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #ffffff;
+            color: #000000;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.5;
+            margin: 0;
+            padding: 0;
+			font-family: 'Nunito Sans', sans-serif;
+        }
+		
+		.hero {
+		  position: relative;
+		  width: 100%;
+		  height: 60vh;
+		  min-height: 400px;
+		  background: url("fromHype2025_background.png") center/cover no-repeat;
+		  display: flex;
+		  align-items: center;
+		  justify-content: center;
+		  text-align: center;
+		  color: #fff;
+		}
+		.hero::after {
+		  content: "";
+		  position: absolute;
+		  inset: 0;
+		  background: rgba(0, 0, 0, 0.30);
+		}
+		.hero-content {
+		  position: relative;
+		  z-index: 1;
+		  padding: 0 1.5rem;
+		  max-width: 900px;
+		}
+		.hero-content h1 {
+		  font-size: clamp(2.4rem, 6vw, 4rem);
+		  font-weight: 600;
+		  margin-bottom: 0.3rem;
+		  line-height: 1.2;
+		}
+	  
+		.hero-content h1 span.block {
+		  display: block;
+		}
+
+
+		.hero-content p.subtitle {
+		  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+		  font-weight: 400;
+		  opacity: 0.9;
+		  margin-bottom: 0.5rem;
+		  text-align: center;
+		}
+
+		.hero-content p.date {
+		  font-size: clamp(1rem, 2vw, 1.4rem);
+		  font-weight: 400;
+		  opacity: 0.8;
+		  margin-bottom: 0;
+		  text-align: center;
+		}
+		
+		.nowrap {
+		  white-space: normal;
+		}
+
+		@media (min-width: 768px) {
+		  .nowrap {
+			white-space: nowrap;
+		  }
+		}
+        
+        p {
+            text-align: justify;
+            margin-bottom: 0.8rem;
+        }
+        
+        a {
+            color: #000000;
+            text-decoration: underline;
+            transition: color 0.3s;
+        }
+        
+        a:hover {
+            color: #333333;
+        }
+
+
+
+		
+        
+        .navbar-dark {
+            background-color: #ffffff !important;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .navbar-dark .navbar-nav .nav-link {
+            font-family: 'Nunito Sans', sans-serif;
+            color: #000000 !important;
+            padding: 8px 15px;
+        }
+        
+        .navbar-dark .navbar-nav .nav-link:hover {
+            color: #555 !important;
+        }
+        
+        .navbar-toggler {
+            border-color: #000;
+        }
+        
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 0, 0, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+        }
+        
+        #about-section {
+            text-align: justify;
+            background: #f8f8f8;
+            border-radius: 10px;
+            padding: 30px;
+        }
+        
+        #registration-section {
+            text-align: left;
+            background: #f8f8f8;
+            border-radius: 10px;
+            padding: 30px;
+        }
+        
+        .long-text {
+            display: none;
+            margin-top: 10px;
+            padding: 15px;
+            background: #f8f8f8;
+            border-left: 3px solid #000000;
+            border-radius: 5px;
+        }
+        
+        .short-text {
+            cursor: pointer;
+            display: inline-block;
+            padding: 5px 0;
+        }
+        
+        .short-text:hover {
+            color: #555;
+        }
+        
+        .toggle {
+            cursor: pointer;
+            margin-right: 8px;
+            font-weight: bold;
+        }
+        
+        .text-wrapper {
+            display: block;
+            width: 100%;
+        }
+        
+        .session-header {
+            background: #f0f0f0;
+            padding: 15px 20px;
+            margin: 20px 0 15px 0;
+            border-left: 4px solid #000000;
+            border-radius: 5px;
+        }
+        
+        .time-slot {
+            color: #000000;
+            font-weight: 600;
+            font-family: 'Space Mono', monospace;
+        }
+        
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        li {
+            margin-bottom: 15px;
+            padding: 8px;
+        }
+        
+        h2 {
+            color: #000000;
+            margin-bottom: 25px;
+            font-size: 1.8rem;
+            font-family: 'Nunito Sans', sans-serif;
+            font-weight: 700;
+        }
+        
+        h3 {
+            color: #000000;
+            margin-top: 0;
+            margin-bottom: 5px;
+            font-size: 1.2rem;
+            font-family: 'Nunito Sans', sans-serif;
+        }
+        
+        h5 {
+            color: #000000;
+            margin-top: 15px;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+            font-family: 'Nunito Sans', sans-serif;
+        }
+        
+        .container {
+            max-width: 1100px;
+        }
+        
+        section {
+            margin-bottom: 30px;
+        }
+        
+        .break-section {
+            background: #f0f0f0;
+            padding: 12px;
+            margin: 20px 0;
+            text-align: center;
+            border-radius: 10px;
+        }
+        
+        .py-5 {
+            padding-top: 2rem !important;
+            padding-bottom: 2rem !important;
+        }
+        
+        footer {
+            background-color: #f8f8f8;
+            margin-top: 30px;
+            padding: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about-section">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#program-section">Program</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#registration-section">Registration</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+		<div class="hero">
+		<div class="hero-content">
+		  <h1>
+			<span class="block">From Hype to Reality:</span>
+			<span class="nowrap">AI in the Study of Art and Culture</span>
+		  </h1>
+		  <p class="subtitle">Symposium</p>
+		  <p class="date">26 November 2025 </p>
+		  <p class="date"> Digital Society Initiative · University of Zurich</p>
+		</div>
+	  </div>
+		
+    </header>
+
+    <main>
+        <section id="about-section" class="py-5">
+            <div class="container">
+                <h2>About</h2>
+                <p>This symposium brings together researchers working at the intersection of artificial intelligence, digital humanities, art history, and cultural studies. The aim of this event is to discuss the various aspects of contemporary AI technologies, particularly in relation to the study of art and culture. Through a series of presentations, we aim to approach AI as both an instrument and object of cultural analysis, highlighting its capacity to reveal new patterns and forms of expression while investigating its epistemic limits, ethical implications, and embedded cultural assumptions. </p>
+                <p>The 2025 edition of From Hype to Reality: AI in the Study of Art and Culture extends the discussions initiated in the <a href="index_from_hype2023.html" target="_blank" rel="noopener">2023 edition</a>. The presentations are organized into four sessions that thematically examine representation and bias in AI systems, methodological innovations in digital cultural analysis, and critical perspectives on how AI structures cultural knowledge and creative production. </p>
+				<p>This event is organized in collaboration with the <a href="https://digitalhumanities.dsi.uzh.ch/" target="_blank" rel="noopener">DSI Digital Humanities Community</a> (Digital Society Initiative, University of Zurich) and the research project (<a href=" https://latentcanon.github.io/#about" target="_blank" rel="noopener">The Canon of Latent Spaces: How Large AI Models Encode Art and Culture</a>) (SNSF-funded Ambizione project). </p>
+				</div>
+        </section>
+
+        <section id="program-section" class="py-5">
+            <div class="container">
+                <h2>Program</h2>
+                
+                <div class="session-header">
+                    <h3>Introduction</h3>
+                </div>
+                <ul>
+                    <li><span class="time-slot">09:15 – 09:30</span> Introduction by Dr. Eva Cetinic</li>
+                </ul>
+
+                <div class="session-header">
+                    <h3>Session I</h3>
+                </div>
+                
+                <ul>
+                    <li>
+                        <span class="time-slot">09:30 – 09:50</span>
+                        <div class="text-wrapper">
+                            <span class="short-text">
+                                <span class="toggle">+</span>
+                                Ellen Charlesworth: Interpreting Bias – Potential Uses and Abuses of Multimodal Models for Cultural Analysis
+                            </span>
+                            <div class="long-text">
+                                <p><strong>Abstract:</strong> Many datasets – for both foundation models and digital art history projects – are unrepresentative or incomplete. Through omission, they often reinforce the western canon or gender and racial stereotypes. Yet, while many projects focus on correcting or minimising this bias, it is impossible to eradicate entirely (Bode, 2020). So, what can we do to nuance or utilise this inevitable feature? Drawing from the growing school of thought that conceptualises biases not as a fault but as a feature of datasets, this talk will explore how we can improve analysis by treating absence not as a lack of information, but as a different type of data (Underwood, 2019; Impett and Offert, 2022; Kestemont et al., 2022). I will discuss how the latent space of multimodal models can be adapted to explore the existing cultural biases within collections, while grappling with their methodological limitations. Most obviously, the utilisation of such models – and the biases they introduce – can inadvertently obscure the underlying cultural and historical biases of interest. I therefore propose new ways to communicate and visualise the biases of multimodal models, with the aim of improving both methodological transparency and the outputs of this experiment. This will form the basis of a broader critical reflection on the utility and potential misuses of the use of multimodal models within cultural collections. </p>
+                                
+                                <p><strong>Bio:</strong> Ellen Charlesworth is a UKRI funded PhD student at Durham University. Having studied art history at the Courtauld Institute of Art and then data science at Birkbeck, her work uses computational methods to explore how digital infrastructure shapes the way we experience cultural heritage. Her most recent projects on bias in cultural datasets have been funded by the Alan Turing Institute (the UK's National Institute for AI and Data Science), and the Bibliotheca Hertziana – the Max Planck Institute for Art History. Her research has featured in newspapers, a podcast, and short film, and she continues to work in the museum sector, collaborating with institutions across the UK, Italy, and Switzerland. </p>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li>
+                        <span class="time-slot">09:50 – 10:10</span>
+                        <div class="text-wrapper">
+                            <span class="short-text">
+                                <span class="toggle">+</span>
+                                Ludovica Schaerf: The Internal Representations of Artificial Cultures
+                            </span>
+                            <div class="long-text">
+                                <p><strong>Abstract:</strong> In a period where big tech companies vocalize the proximity of Artificial General Intelligence (AGI), some scholars have advocated for the misdirected focus on intelligence (Cetinic, 2022; Underwood, 2021). Most importantly, these models are models of artificial cultures, learning larger and larger chunks of the internet culture. The question of how AI models, especially image generation models, represent these cultures, and therefore, how this information is curated within the model parameters, is often unaddressed due to the 'black box' nature of these models. However, such analyses are critical because they show how the information coming from the data can be captured by the model, where and what aspects are easiest to learn. These factors contribute to tailored analyses of model biases and model unlearning. In this talk, we will attempt to shed some light on how the different image generation models learn representations of the data they are fed with. Particularly, we focus on how the architectures themselves create a certain learning condition rather than on the role of the data itself.  </p>
+                                
+                                <p><strong>Bio:</strong> Ludovica Schaerf is a PhD student in Digital Visual Studies between the Max Planck Society (MPG) and the University of Zurich (UZH) since March 2023. She holds a Bachelor's in Liberal Arts and Sciences from Amsterdam University College and a Master's of Science in Digital Humanities at the Swiss Federal Institute of Technology of Lausanne (EPFL). Ludovica worked as a Data Scientist for insurance and academic publishing and as an AI developer in the art market. Her interests lie in interdisciplinary research between Media, Arts and Artificial Intelligence. Her research focuses on understanding latent spaces of generative vision models from a technical and media philosophical perspective.</p>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li>
+                        <span class="time-slot">10:10 – 10:30</span>
+                        <div class="text-wrapper">
+                            <span class="short-text">
+                                <span class="toggle">+</span>
+                                Aleksandra Urman: The World We See Through AI's Eyes: U.S. Cultural Dominance in Text-to-Image Generation
+                            </span>
+                            <div class="long-text">
+                                <p><strong>Abstract:</strong> Generative AI models, including text-to-image (T2I) systems such as DALL-E and Stable Diffusion, are increasingly shaping digital representations of culture and identity. They are trained on vast datasets, often sourced from Western contexts generally, and the US more specifically, leading to concerns about whether they equitably represent global cultural diversity. This ongoing work investigates cultural bias in text-to-image (T2I) models, examining how systems like DALL-E 3 represent diverse cultural contexts. Using a comprehensive dataset of 280 prompts across 14 domains of daily life, translated into 15 languages and representing 30 national contexts, we generated over 74,000 images from DALL-E 2 and DALL-E 3. Our quantitative analysis using OpenAI's Contrastive Language-Image Pre-training embeddings reveals that, regardless of prompt language, images generated by DALL-E 3 without explicit country specification consistently resemble US-specific imagery more than any other national context. This finding provides empirical evidence that the model defaults to what it represents as US-American visual language, effectively encoding US cultural hegemony into digital representations. Our ongoing research agenda includes expanding this analysis to DALL-E 2, collecting comparable data from models with open weights like Stable Diffusion, and conducting human annotation-based analyses to evaluate cultural accuracy and stereotyping across contexts. By combining multilingual and country-specific prompting, our study provides a framework for evaluating cultural bias and global diversity representation in generative AI systems.</p>
+                                
+                                <p><strong>Bio:</strong> Aleksandra Urman is a Senior Research Associate at Social Computing Group, University of Zurich. Her current research interests are centered around the information quality online and the influence of algorithmic systems on online communication patterns, with a particular emphasis on algorithmic bias and information retrieval. Her past work, on one hand, includes studies on political communication on social media with a focus on polarization, far-right communication and protest mobilization in authoritarian regimes; and, on another hand, impact algorithm audits examining the quality of socio-politically relevant information in web search results. With the interdisciplinary background at the intersection of Social Science and Computer Science, in her work, Dr. Urman combines cutting-edge computational methods with established social science methodologies and approaches.</p>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li>
+                        <span class="time-slot">10:30 – 10:50</span>
+                        <div class="text-wrapper">
+                            <span class="short-text">
+                                <span class="toggle">+</span>
+                                Maria-Teresa De Rosa Palmini: Synthetic History: Evaluating Visual Representations of the Past in Diffusion Models
+                            </span>
+                            <div class="long-text">
+                                <p><strong>Abstract:</strong> As Text-to-Image (TTI) diffusion models become increasingly influential in content creation, growing attention is being directed toward their societal and cultural implications. While prior research has primarily examined demographic and cultural biases, the ability of these models to accurately represent historical contexts remains largely underexplored. To address this gap, we introduce a benchmark for evaluating how TTI models depict historical contexts. The benchmark combines HistVis, a dataset of 30,000 synthetic images generated by three state-of-the-art diffusion models from carefully designed prompts covering universal human activities across multiple historical periods, with a reproducible evaluation protocol. We evaluate generated imagery across three key aspects: (1) Implicit Stylistic Associations: examining default visual styles associated with specific eras; (2) Historical Consistency: identifying anachronisms such as modern artifacts in pre-modern contexts; and (3) Demographic Representation: comparing generated racial and gender distributions against historically plausible baselines. Our findings reveal systematic inaccuracies in historically themed generated imagery, as TTI models frequently stereotype past eras by incorporating unstated stylistic cues, introduce anachronisms, and fail to reflect plausible demographic patterns. By providing a reproducible benchmark for historical representation in generated imagery, this work provides an initial step toward building more historically accurate TTI models.</p>
+                                                                
+                                <p><strong>Bio:</strong> Since February 2024, Maria-Teresa De Rosa Palmini has been a PhD student at the Digital Society Initiative of the University of Zurich. She holds a Bachelor's degree in English Language and Literature from the National and Kapodistrian University of Athens and a Master's degree in Computational Linguistics from the University of Konstanz. Her current research, conducted under the supervision of Dr. Eva Cetinić, is part of the project The Canon of Latent Spaces: How Large AI Models Encode Art and Culture.
+								This work focuses on evaluation benchmarking and explainability for large multimodal AI models, with the broader aim of understanding not only how these systems learn, represent, and reproduce cultural and societal knowledge, but also how users interpret and interact with them. Ultimately, her research seeks to contribute to the development of AI systems that are more transparent, interpretable, and aligned with human values.</p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="break-section">
+                    <span class="time-slot">☕ 10:50 – 11:05 — Coffee Break (15 min)</span>
+                </div>
+
+                <div class="session-header">
+                    <h3>Session II</h3>
+                </div>
+                
+                <ul>
+                    <li>
+                        <span class="time-slot">11:05 – 11:25</span>
+                        <div class="text-wrapper">
+                            <span class="short-text">
+                                <span class="toggle">+</span>
+                                Lars Pinkwart: Content Maxxing' – Generative AI and the Optimization of Culture
+                            </span>
+                            <div class="long-text">
+                                <p><strong>Abstract:</strong> Not only have the outputs of generative AI models come to shape contemporary popular culture, they have also further emphasized how artefacts of popular culture as content – created for shareability and attention – are already products of the political economy of platform capitalism.  Generative AI is accelerating, automating and maxxing2 these tendencies: where it was once essential to game the algorithm to achieve engagement and cultural relevance, now the maximization of one's own presence and distinctiveness ('brand') in future training data becomes central, as the work xhairymutantx (2025) by Holly Herndon and Matt Dryhurst speculates. Maximal replication (itself enabled by generative models promising infinite variability) as well as aesthetic exaggeration of distinct features bring forth a mode of memetic struggle for 'cultural survival' akin to Universal Darwinism, as "becoming data comes to seem like the primary means of social participation". Ultimately, the question of instrumental convergence posed by Nick Bostrom in his paperclip maximiser thought experiment5 seems to appear again: what happens to culture, when the model – and in turn its users – optimize solely towards high-performing content? </p>
+                                
+                                <p><strong>Bio:</strong> Lars Pinkwart is a Research Associate and PhD Student at the DIZH Bridge Professorship Digital Cultures and Arts between Zurich University of the Arts and University of Zurich. He holds an interdisciplinary MA in Design and Computation between TU Berlin and University of the Arts Berlin. Before, he studied media studies and visual culture at University of Potsdam and Goldsmiths, UoL. His research focuses on synthetic media, virtual worlds and the post-representational epistemologies shaping digital cultures. </p>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li>
+                        <span class="time-slot">11:25 – 11:45</span>
+                        <div class="text-wrapper">
+                            <span class="short-text">
+                                <span class="toggle">+</span>
+                                Mariya Dzhimova & Benedikt Zönnchen: From an Experimental Technology to a Mainstream Product: Implications for Generative AI as an Artistic Medium
+                            </span>
+                            <div class="long-text">
+                                <p><strong>Abstract:</strong> This paper examines how the rapid evolution of generative AI — from an experimental, unstable, and niche technology that required technical expertise to a widely accessible and commercially integrated product — has reshaped its appeal as an artistic medium. Drawing on ethnographic studies of earlier artistic work with AI, particularly GAN-based practices characterized by manual crafting, embodied experimentation, unpredictability, glitches, and an iterative negotiation between control and uncontrollability, it shows that artists once treated AI not as a tool of reliable execution but as a site of exploration. The paper argues that contemporary generative AI has undergone socio-technical transformations that reduce precisely the features that once made it compelling as a medium. Interface simplification, architectural refinement, large-scale training and mass adoption stabilize error, enforce semantic fidelity, and obscure internal mechanics, while limiting artists' ability to "work the model against the grain". At the same time, mass adoption diminishes novelty and saturates cultural spaces with normative and hyperreal aesthetics. As AI becomes a mainstream product aligned with efficiency, scale, and precision, it risks ceasing to function as a site of aesthetic discovery and artistic knowledge production. This shift has implications for individual artistic practice, for the subfield of AI art, and for the broader logics of novelty, experimentation, and resistance in the art world. The paper concludes by outlining a research agenda on how artists experience and adapt to this transition; whether AI art is moving towards obsolescence as a category; and how accelerating innovation may provoke new artistic responses.</p>
+                                
+                                <p><strong>Bios:</strong></p>
+                                <p><strong>Mariya Dzhimova:</strong> Mariya Dzhimova is a Research Associate at the Institute for Cultural Management and Media at the University of Music and Performing Arts in Munich. Since 2022, she has been leading the Digitalisation Lab "Artificial Intelligence in Culture and Arts" (AICA). Her work combines sociological inquiry with media and cultural theory to explore how emerging technologies reshape creative processes and cultural production. She studied Sociology (B.A.) at the University of Mannheim and Sociology of Technology (M.A.) at the University of Berlin, focusing on the social dimensions of technological innovation and the co-evolution of humans and machines. </p>
+                                <p><strong>Benedikt Zönnchen:</strong> Dr. Benedikt Zönnchen is a research associate at the Munich Center for Digital Sciences, part of the Munich University of Applied Sciences. He earned his Ph.D. in Computer Science from the Technical University of Munich, where he studied crowd dynamics and developed parallel algorithms for large-scale simulations of complex systems. His current research examines artificial intelligence as an emergent, self-referential system intertwined with human cognition and communication. Drawing on Luhmann's systems theory and cybernetic principles, he studies the interrelations between psychic, social, and artificial systems to understand how self-learning algorithms transform education, art, and culture. He supports systems theorists' proposed shift from a focus on intelligence to a focus on (artificial) communication. He also lectures and contributes to the bidt-funded project Artificial Intelligence in Culture and Arts. Beyond academia, his interests include philosophy and algorithmic art. </p>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li>
+                        <span class="time-slot">11:45 – 12:05</span>
+                        <div class="text-wrapper">
+                            <span class="short-text">
+                                <span class="toggle">+</span>
+                                Laura Wagner: Text-to-Image in the Wild: Ethics and Culture in Open-Source AI 
+                            </span>
+                            <div class="long-text">
+                                <p><strong>Abstract:</strong> Open-source text-to-image (TTI) pipelines currently dominate the landscape of AI-generated visual content. As personalization techniques such as LoRA enable users to fine-tune models for specific tasks, open-source TTI pipelines expand both creative experimentation and harmful forms of visual synthesis. Focusing on CivitAI, the most active platform for sharing and developing such models, this research presents a sociotechnical analysis of user-generated visual content and model development practices. The findings reveal a disproportionate rise in not-safe-for-work material and a significant number of models designed to mimic real individuals without consent, illustrating how personalization tools can also facilitate the large-scale production of exploitative or non-consensual imagery.  While these practices are enabled by technical accessibility, they are also shaped by cultural patterns that originated in earlier internet communities. Platforms such as anime-focused imageboards and boorus developed collaborative tagging systems that organized vast amounts of visual material through detailed, community-specific vocabularies. These informal taxonomies, or "folksonomies," have since been incorporated into machine learning workflows through auto-captioning and dataset-tagging tools, embedding culturally contingent aesthetic categories into the technical infrastructure of open-source AI. By tracing how open-source text-to-image systems inherit conventions and practices from earlier internet communities and continue to evolve within contemporary TTI ecosystems, this talk situates open-source TTI AI within a broader genealogy of internet visual culture. Drawing on constructivist perspectives on technology, it examines how design choices, data infrastructures, and community norms contribute to the production of exploitative visual media. </p>
+                                
+                                <p><strong>Bio:</strong> Since early 2024, Laura has been pursuing her PhD at the University of Zurich. Her research begins with investigating open-source text-to-image and video generative AI models in the wild, with a focus on how they are adopted, personalized and reshared across communities. She is particularly interested in how systemic issues—such as the appropriation of unlicensed or violent material in training data—resurface in personalized model outputs and community practices. Her work is part of the project "The Canon of Latent Spaces: How Large AI Models Encode Art and Culture" led by Eva Cetinic.</p>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li>
+                        <span class="time-slot">12:05 – 12:25</span>
+                        <div class="text-wrapper">
+                            <span class="short-text">
+                                <span class="toggle">+</span>
+                                Clay Foye & Paul Guhennec: The Finite Potential of Latent Spaces
+                            </span>
+                            <div class="long-text">
+                                <p><strong>Abstract:</strong> A conception of the "latent space" has taken root throughout the digital humanities. This understanding of latent space envisions a continuous, complete, and navigable geography of a manifold which existed a priori to learned representations or embeddings. These embedding vectors are then used as locatable reference points with consistent spatial relationships for post-hoc sampling and generation. This conceptualization of latent space describes these empty distances between points not as the abysses of incoherence, but rather as a space of potentiality encoding all possibilities. As techniques which employ latent space spread throughout computational art history, these possibilities aim to reflect all of art history. However, we are concerned with this interpretation of these interstitial and liminal spaces between learned embedding vectors. We will show this flawed conception of these spaces requires that pairwise distances of learned vectors aspire to a definitive, static, and fixed state which is only attainable via a hypothetical datafication of everything. Our contribution will highlight the problematic nature of this conception: on the one hand, its dependence on post-processing methods that introduce tautological choices which weaken any research conclusions; and on the other hand, the danger of relying on a single, complete latent space as the eschaton of culture. In response to these limitations, we will contrast idealized latent spaces with a new technical solution: circuit tracing. By grouping sets of sparsified neural activations, circuit tracing makes it possible to detect the presence and interaction of operative concepts. In highlighting structures of neural interactions, circuit tracing offers a more dynamic conception of the latent space without having to make wideranging claims about potentiality. We will argue that when combined with a socio-technical critique of its functioning, circuit tracing functions as a partial window onto the biased processes of formation of latent spaces and enables the deeper critique that the use of AI in the arts commands. </p>
+                                
+                                <p><strong>Bios:</strong></p>
+                                <p><strong>Clay Foye:</strong> Clay Foye is currently a master's student in Digital Humanities at EPFL in his third semester. Originally trained in comparative literature and computer science, his research focuses on combining mechanistic interpretability and critical theory to create trustworthy AI systems. Right now, he is working with the Digital Visual Studies lab at UZH on the inner-workings of AI models.   </p>
+                                <p><strong>Paul Guhennec:</strong> Paul Guhennec is a post-doctoral researcher at the University of Zurich and EPFL, working at the intersection of digital techniques and architectural history. He recently completed his doctoral dissertation at EPFL which examined a computational distant way of seeing Venice's urban fabric and vernacular architecture. His research interests include the intellectual history of computation, critical AI, as well as urban and architectural history.  </p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="break-section">
+                    <span class="time-slot">🍽️ 12:25 – 13:25 — Lunch Break (1 h)</span>
+                </div>
+
+                <div class="session-header">
+                    <h3>Session III</h3>
+                </div>
+                
+                <ul>
+                    <li>
+                        <span class="time-slot">13:25 – 13:45</span>
+                        <div class="text-wrapper">
+                            <span class="short-text">
+                                <span class="toggle">+</span>
+                                Ismini Makaratzi: Between Analysis and Generation: On the Methodological Horizon of Digital Art History 
+                            </span>
+                            <div class="long-text">
+                                <p><strong>Abstract:</strong> This presentation draws on my ongoing doctoral research, which examines how GenAI can participate in, rather than automate, art history research. This research combines methodological experimentation, examining how generative and multimodal models engage with art-historical language and imagery, with a broader inquiry into the epistemic and infrastructural conditions of digital art history. GenAI systems such as multimodal and large language models do not operate neutrally; they materialize specific conceptions of history, visuality, and representation in the ways their data are selected and meanings distributed across latent spaces. Their architectures reproduce inherited regimes of seeing and knowing while concealing interpretive assumptions under computational form. The project develops a hybrid, GenAI-powered framework for large-scale analysis of art-historical writing and visual material from the mid-eighteenth century to the present, integrating computational methods within a humanistic interpretive model. The research mobilizes domain-trained language models, adapted CLIP architectures, and semantic mapping as methodological probes to examine how interpretation itself is reshaped across textual and visual domains. At the same time, it exposes a structural limitation: the restricted accessibility of art-historical textual data across repositories such as Kubikat, IBA, and Oxford Art Online—constraints that mirror the discipline's hesitation toward methodological openness and its enduring ambivalence about AI's place in art history. </p>
+                                
+                                <p><strong>Bio:</strong> Ismini Makaratzi is a PhD researcher at the Digital Humanities Lab, University of Basel, specializing in Digital Art History. She holds a Master's degree in Digital Humanities and Art History from the University of Basel, a Bachelor's degree in Archaeology and Art History from the University of Crete, and a Diploma in Dance from the Higher Professional Dance School of D. Grigoriadou in Athens. Her research critically examines how AI can be integrated into art history without compromising the interpretive practice. She develops hybrid methods for analyzing large-scale textual and visual corpora, focusing on epistemological bias, the positionality of knowledge, and the role of human agency in digital humanities.</p>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li>
+                        <span class="time-slot">13:45 – 14:05</span>
+                        <div class="text-wrapper">
+                            <span class="short-text">
+                                <span class="toggle">+</span>
+                                Tsz-Kin Raphael Chau: A Step Back: Reconsidering Discretization in the Age of Reasoning-VLMs
+                            </span>
+                            <div class="long-text">
+                                <p><strong>Abstract:</strong> The adoption of CLIP-based semantic search marked a pragmatic leap forward for GLAM institutions, offering a transformative alternative to older, expert-engineered methods. The success of this tool now fuels the seductive vision of an 'ever-smarter', chain-of-thought automation capable of solving more complex scholarly tasks. This presentation challenges that vision by proposing a counter-intuitive step back. I argue for a deliberate return from direct vectorization to reconsider 'discretization', presenting an expert-driven workflow where a commercial reasoning VLM is guided by domain-specific prompts to reason about and generate rich, structured descriptions for embedding. This re-centres the art historian as an active architect of the analytical process. Grounded in the challenge of tracking visual motifs from 15th-16th century Swiss illustrated chronicles to a 19th-century panorama, an analysis of key examples reveals the limitations of CLIP-based vectorization. The proposed method's success in certain cases also exposes a cascade of critical trade-offs. The analysis reveals the methodological "one-way street" this approach creates, the effects of inherited censorship, and the threat of building scholarship on ephemeral proprietary products.Ultimately, the pursuit of a 'zero-shot' art history is a dangerous illusion. The use case presented demonstrates how an expert-guided, chain-of-thought process can bridge complex visual domains. This proves the future is not about replacing the scholar, but demanding a more critical and technically engaged one. This presentation concludes with a call to place rigorous humanistic expertise at the centre of our workflows, moving from being passive users of unsustainable black boxes to active designers of transparent and replicable intellectual systems. </p>
+                                
+                                <p><strong>Bio:</strong> Tsz-Kin Raphael Chau is a PhD candidate in Digital Humanities at the Laboratory for Experimental Museology (eM+) at EPFL, supervised by Prof. Sarah Kenderdine. With a background in Art History and Digital Humanities, his research is situated at the intersection of computational methods and scholarly practice. His doctoral work is a central component of the Murten Panorama Digital Scholarly Edition, where he designs and implements the semantic annotation model, platform, and knowledge graph. The Murten project serves as his testbed for developing a conceptual framework that continues the tradition of scholarly editing in a digital context. His approach unites infrastructure thinking with linked open data and VLMs to build AI-powered scholarly environments that transform the scholar's interpretation into computable, interoperable knowledge.</p>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li>
+                        <span class="time-slot">14:05 – 14:25</span>
+                        <div class="text-wrapper">
+                            <span class="short-text">
+                                <span class="toggle">+</span>
+                                Nicola Fanelli: ArtSeek: Deep Artwork Understanding via Multimodal In-Context Reasoning and Late Interaction Retrieval
+                            </span>
+                            <div class="long-text">
+                                <p><strong>Abstract:</strong> Analyzing digitized artworks presents unique challenges, requiring not only visual interpretation but also a deep understanding of rich artistic, contextual, and historical knowledge. We introduce ArtSeek, a multimodal framework for art analysis that combines multimodal large language models with retrieval-augmented generation. Unlike prior work, our pipeline relies only on image input, enabling applicability to artworks without links to Wikidata or Wikipedia-common in most digitized collections. ArtSeek integrates three key components: an intelligent multimodal retrieval module based on late interaction retrieval, a contrastive multitask classification network for predicting artist, genre, style, media, and tags, and an agentic reasoning strategy enabled through in-context examples for complex visual question answering and artwork explanation via Qwen2.5-VL. Central to this approach is WikiFragments, a Wikipedia-scale dataset of image-text fragments curated to support knowledge-grounded multimodal reasoning. Our framework achieves state-of-the-art results on multiple benchmarks, including a +8.4% F1 improvement in style classification over GraphCLIP and a +7.1 BLEU@1 gain in captioning on ArtPedia. Qualitative analyses show that ArtSeek can interpret visual motifs, infer historical context, and retrieve relevant knowledge, even for obscure works. Though focused on visual arts, our approach generalizes to other domains requiring external knowledge, supporting scalable multimodal AI research. </p>
+                                
+                                <p><strong>Bio:</strong> Nicola Fanelli is a PhD student in Computer Science & Mathematics at the University of Bari Aldo Moro. His research focuses on deep learning  systems for the analysis and valorization of digitized artistic and cultural heritage. More specifically, he is focused on leveraging computer vision, multimodal deep learning (particularly vision and language), and generative models to solve complex challenges in artwork understanding, such as automatic captioning, cross-modal generation (e.g., from visual arts to music), and multi-mask inpainting. He is dedicated to exploring how advanced AI techniques can be applied to the Digital Humanities to deepen the interpretation and accessibility of art.</p>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li>
+                        <span class="time-slot">14:25 – 14:45</span>
+                        <div class="text-wrapper">
+                            <span class="short-text">
+                                <span class="toggle">+</span>
+                                Alexander Rusnak: Representing Beauty: Towards a Participatory but Objective Latent Aesthetics
+                            </span>
+                            <div class="long-text">
+                                <p><strong>Abstract:</strong> What does it mean for a machine to recognize beauty? While beauty remains a culturally and experientially compelling but philosophically elusive concept, deep learning systems increasingly appear capable of modeling aesthetic judgment. In this paper, we explore the capacity of neural networks to represent beauty despite the immense formal diversity of objects for which the term applies. By drawing on recent work on cross-model representational convergence, we show how aesthetic content produces more similar and aligned representations between models which have been trained on distinct data and modalities - while unaesthetic images do not produce more aligned representations. This finding implies that the formal structure of beautiful images has a realist basis - rather than only as a reflection of socially constructed values. Furthermore, we propose that these realist representations exist because of a joint grounding of aesthetic form in physical and cultural substance. We argue that human perceptual and creative acts play a central role in shaping these the latent spaces of deep learning systems, but that a realist basis for aesthetics shows that machines are not mere creative parrots but can produce novel creative insights from the unique vantage point of scale. Our findings suggest that human-machine co-creation is not merely possible, but foundational - with beauty serving as a teleological attractor in both cultural production and machine perception.</p>
+                                
+                                <p><strong>Bio:</strong> Alexander Rusnak is a Phd student in the Digital Humanities at the École Polytechnique Fédérale de Lausanne. His research focuses on deep learning systems for the manipulation of large 3D models, usually of culturally important buildings or cities. More specifically, he is focused on leveraging multimodal representation learning and open-vocabulary semantics to describe the particular characteristics that differentiate culturally significant structures from the mundane while maintaining high model generalizability. He is also a practicing painter and digital artist with an enduring fascination about beauty as well as the influence of digital tools on the contemporary creative landscape.</p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="break-section">
+                    <span class="time-slot">☕ 14:45 – 15:05 — Coffee Break (20 min)</span>
+                </div>
+
+                <div class="session-header">
+                    <h3>Session IV</h3>
+                </div>
+                
+                <ul>
+                    <li>
+                        <span class="time-slot">15:05 – 15:25</span>
+                        <div class="text-wrapper">
+                            <span class="short-text">
+                                <span class="toggle">+</span>
+                                Giacomo Alliata: Computational Sculpting as Hermeneutic Method: Interpreting Audiovisual Culture through AI  
+                            </span>
+                            <div class="long-text">
+                                <p><strong>Abstract:</strong> As artificial intelligence becomes entangled with the study of culture, a central question emerges: how can computational processes themselves serve as instruments of interpretation? This presentation introduces the notion of computational sculpting as a hermeneutic methodology that uses AI not only to structure access to cultural data but to generate interpretative claims about it. Focusing on large-scale audiovisual archives, the talk traces a chain of operations—datafication, vectorisation, and computational mapping—that progressively transform cultural material into an interpretable space. Each step produces its own analytical perspective. Swiss Echoes employs datafication to reveal the spatial and geopolitical contours of broadcast memory, allowing patterns of representation and absence to surface through geolocated visualisation. Posing at the Olympics explores vectorisation as an analytical encoding of gesture, where bodily movement becomes a site of comparative interpretation across decades of Olympic performance. Finally, Pose Cartography exemplifies dimensionality reduction as a form of computational mapping that exposes latent continuities in dancers' poses across hundreds of performance recordings. By reading these algorithmic transformations as interpretative operations, computational sculpting reframes AI pipelines as cultural instruments that can articulate form, style, and meaning in new ways. Rather than opposing humanistic and computational modes of inquiry, this approach integrates them into a single process of epistemic mediation—where scholarly interpretation arises from navigating, visualising, and reflecting upon algorithmically generated structures. The presentation argues that computational sculpting thus extends the scope of digital hermeneutics: it enables scholars to think through the aesthetic and epistemological implications of AI, while reimagining how cultural knowledge is produced, situated, and shared within digital infrastructures. </p>
+                                
+                                <p><strong>Bio:</strong> Giacomo Alliata holds a PhD from the Laboratory for Experimental Museology (eM+), EPFL, where he worked within the SNSF-funded project Narratives from the Long Tail: Transforming Access to Audiovisual Archives. His research explores the intersection of embodied interaction, immersive visualisation, and AI-driven analysis of cultural collections, with a focus on large-scale audiovisual heritage. Combining computational methods with practice-based inquiry, his work introduces "computational sculpting" as a hermeneutic and curatorial strategy for transforming media archives into spatial, navigable knowledge environments. He has collaborated with institutions including RTS, the International Olympic Committee, Eye Filmmuseum, the Prix de Lausanne, and the Montreux Jazz Festival. He will soon join Université de Rennes 2 as a postdoctoral researcher, continuing his work on computational methods for cultural memory and performance archives.</p>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li>
+                        <span class="time-slot">15:25 – 15:45</span>
+                        <div class="text-wrapper">
+                            <span class="short-text">
+                                <span class="toggle">+</span>
+                                Lukas Stuber, Phillip Ströbel & Felix Maier: Cleopatra's Nose, LLMs and Statistics — A Novel Approach to Counterfactual History
+                            </span>
+                            <div class="long-text">
+                                <p><strong>Abstract:</strong> «Cleopatra's nose, had it been shorter, the whole face of the world would have changed.» Blaise Pascal's seventeenth-century speculation (1835) is not the first, but among the most famous examples of counterfactual history, still popular today thanks to the comic Astérix et Cléopâtre (1965). Historians, by contrast, have dismissed counterfactual reasoning as untheorizable: its outcomes cannot be falsified. E. P. Thompson (1978) even coined the mock-German invective Geschichtswissenschlopff, claiming such exercises express no exploratory «What if?» but a reactionary «If only!» Indeed, when Donald Trump insisted the war in Ukraine would never have occurred under his leadership, he was effectively weaponizing counterfactual history. Sadly, both dismissal and misuse persist, though counterfactuals can be powerful tools: They let us explore contingencies, complexities and causalities of the past. Scholars such as Belkin et al. (1996), Lebow (2010), and Virmajoki (2018; 2020; 2023) argue that the method has value if conjecture is disciplined by the principle of Minimal Rewrite: introducing minute changes to keep the counterfactuals tied to actual events. Paradoxically, Minimal Rewrites yield insight only when produced at scale – a task long unfeasible, until generative AI entered the picture: Combined with Minimal Rewrites, AI can serve as an analytical instrument within cultural production, generating and comparing vast amounts of counterfactuals to reveal patterns that shape our understanding of history. The approach raises new questions that, alongside our first experiments, constitute the core of our presentation: — How do we choose the relevant events and control the scope of the AI's intervention? — What happens when the resulting dataset is examined through stochastic models? — Will we learn more about the tools' bias than about history's causality? — How can these insights become productive for scholarship, public understanding, and education alike? Our first experiments suggest, among others, one finding: Pascal may have been wrong. </p>
+                                
+                                <p><strong>Bios:</strong></p>
+                                <p><strong>Phillip B. Ströbel:</strong> Dr. Phillip B. Ströbel is a computational linguist and historian at the University of Zurich, where he combines digital methods with the study of ancient texts and material culture. His work explores how language technologies can illuminate historical reasoning, from large-scale text mining in the impresso project to multilingual handwriting recognition and corpus modelling in Bullinger Digital. He founded the AIncient Studies Lab, which develops AI-driven approaches to the reconstruction and visualisation of antiquity. </p>
+                                <p><strong>Lukas Stuber:</strong> Lukas Stuber is a student of history at the University of Zurich. An erstwhile novelist turned entrepreneur, he became one of Switzerland's pioneers in digital marketing, working for more than two decades in the advertising industry and later advising organisations on digital ethics before resuming the history studies he had abandoned in the 1990s. Today, as a bachelor student and research assistant in ancient history, he explores how counterfactual reasoning and generative models can be used to test and refine the logic of historical explanation. </p>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li>
+                        <span class="time-slot">15:45 – 16:05</span>
+                        <div class="text-wrapper">
+                            <span class="short-text">
+                                <span class="toggle">+</span>
+                                Olga Serbaeva Saraogi: The Algorithm of Revelation: Historical Value of AI-generated Images in the Context of Study of a Lost Visual Tradition
+                            </span>
+                            <div class="long-text">
+                                <p><strong>Abstract:</strong> This project investigates a remarkable corpus of visual representations of fierce Indian goddesses  that has remained inaccessible for over a millennium, depicted in the Jayadrathayamala, is a text 2 times longer than the Bible, compiled in the 10th century Kashmir. The study of this text was obscured by the scarcity of manuscripts, the esoteric and secret character of the rituals, and, more recently, the political upheavals in Kashmir that destroyed much historical evidence. It took almost two decades to transcribe, collide, edit and translate this text, which contains some 200 unique descriptions of the Indian goddesses. Previously inaccessible and thus unstudied, these images functioned as sophisticated epistemic models—encoding ritual systems, providing immediate access to cosmological structures, and serving as vehicles for transformative religious experience. I would like to explore a possibility of reconstructing an AI generated representations of these terrible goddesses and to reflect on the historical validity of such a representation.  This presentation is a follow-up of my presentation at the University of Oxford in September 2025, where the reconstructed images based on the Jayadrathayamala were presented to the academic community for the first time. </p>
+                                
+                                <p><strong>Bio:</strong> Dr. Olga Serbaeva Saraogi holds a PhD in Studies of Religions from the University of Lausanne, postdoc 2027-2010 at the University of Zurich (UFSP "Asia and Europe"), specialist in Sanskrit, Indian Tantric Traditions, Sanskrit Computational Corpus LInguistics, Digital Humanities and AI. Currently works at UZH, UNIBAS and UNIL.</p>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li>
+                        <span class="time-slot">16:05 – 16:25</span>
+                        <div class="text-wrapper">
+                            <span class="short-text">
+                                <span class="toggle">+</span>
+                                Oliver Sahli & Stella Speziali: Conversations with Puppets: Reviving Fred Schneckenburger's Cabaret through Generative AI 
+                            </span>
+                            <div class="long-text">
+                                <p><strong>Abstract:</strong> Conversation with Puppets is part of the current exhibition called "Museum of the Future" at the Museum für Gestaltung. The installation uses Large Language Models (LLMs) to reanimate the cultural heritage of the cabaret sketeches of Fred Schneckenburger. Drawing from the collection of the Swiss artist Schneckenburger, the project brings historical rod puppets to life as conversational avatars that engage visitors in spoken dialogue.  Three Puppets embody their distinct personality, speech style, and knowledge base, extracted from archival material, allowing audiences to encounter Schneckenburger's Sketches as interactive performances. The system utilises a "system-prompt" approach combined with "knowledge tools" through tool calling, repurposed as performative action sequences. Visitor speech is transcribed via Whisper and processed through a dialogue engine that blends factual retrieval with expressive, in-character generation. These custom "tools" guide rhetorical tone and performance, eliciting acting from the LLM. Synthesized voices—generated with the open-source Piper TTS model—align vocal timbre and rhythm with each puppet's character design. This installation offers an approach to conserving intangible cultural heritage—oral traditions, and performative arts—through embodied, participatory interaction. While highlighting the potential of generative systems to transmit ephemeral culture, the work raises ethical questions around representation and authenticity, especially under real world legal and ethical limitations in re-staging archived material. Conversation with Puppets investigates a future where archives can be investigated via questions and museums become dialogical spaces in which objects are not merely described but actively answer when engaged. </p>
+                                
+                                <p><strong>Bios:</strong></p>
+                                <p><strong>Stella Speziali:</strong> Stella Speziali is an interactive designer and researcher at the Zurich University of the Arts' Immersive Arts Space. With a background in visual communication and interaction design, her work focuses on digital humans, avatars, and real-time immersive systems in artistic and performative contexts. </p>
+                                <p><strong>Oliver Sahli:</strong> Oliver Sahli is a researcher at the Zurich University of the Arts' Immersive Arts Space, specializing in extended reality and generative AI. He holds both a bachelor's and a master's degree in game design from the Zurich University of the Arts and works as an interactive artist. His research and artistic practice focus on embodied interaction, performative interfaces, and mixed reality co-interaction within artistic and exhibition contexts. </p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        
+        <section id="registration-section" class="py-5">
+            <div class="container">
+                <h2>Registration</h2>
+                <h5>Public event with registration</h5>
+                <p>The participation in the symposium is free and open to everyone. The symposium will be held on-site in Zurich, Switzerland, at the Digital Society Initiative (DSI), Rämistrasse 69, Eventraum, University of Zurich. </p>
+                <p>To register for the event please go to: <a href="https://www.ema.uzh.ch/en/register/from-hype-to-reality-ai-in-the-study-of-art-and-culture.html">registration</a></p>
+                <p>For any additional questions, please send an email to <a href="mailto:maria-teresa.derosa-palmini@khist.uzh.ch">maria-teresa.derosa-palmini@khist.uzh.ch</a></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container text-center">
+            <p style="margin: 0;">&copy; 2025 University of Zurich | From Hype to Reality Symposium</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
+    <script>
+        const shortTexts = document.querySelectorAll(".short-text");
+        const longTexts = document.querySelectorAll(".long-text");
+        const toggles = document.querySelectorAll(".toggle");
+
+        for (let i = 0; i < shortTexts.length; i++) {
+            shortTexts[i].addEventListener("click", function() {
+                if (longTexts[i].style.display === "none" || longTexts[i].style.display === "") {
+                    longTexts[i].style.display = "block";
+                    toggles[i].innerHTML = "−";
+                } else {
+                    longTexts[i].style.display = "none";
+                    toggles[i].innerHTML = "+";
+                }
+            });
+        }
+    </script>
+</body>
+</html>
